@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Check-in salvo</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header><h1>Check-in registrado</h1></header>
+<main>
+    <div class="card">
+        <p class="success">Seu check-in foi salvo com sucesso.</p>
+        <p><strong>Humor:</strong> <span th:text="${checkin.nrHumor}"></span></p>
+        <p><strong>Comentário:</strong> <span th:text="${checkin.dsComentario}"></span></p>
+        <p><strong>Recomendação:</strong> <span th:text="${recomendacao}"></span></p>
+        <a class="btn" th:href="@{/aluno/historico}">Ver histórico</a>
+    </div>
+</main>
+</body>
+</html>

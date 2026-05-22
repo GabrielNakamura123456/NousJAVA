@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>NOUS Web</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<header>
+    <h1>NOUS Web</h1>
+    <nav>
+        <a th:href="@{/}">Início</a>
+        <a th:href="@{/login}">Entrar</a>
+    </nav>
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <div class="card hero">
+        <h2>Acompanhamento emocional e educacional</h2>
+
+        <p>
+            Projeto acadêmico baseado no NOUS para apoiar alunos e dar visão analítica aos educadores.
+        </p>
+
+        <p><strong>Fluxo 1:</strong> aluno realiza check-in emocional e recebe recomendação.</p>
+        <p><strong>Fluxo 2:</strong> educador acompanha alunos e identifica alertas.</p>
+
+        <a class="btn" th:href="@{/login}">
+             Fazer login
+        </a>
+    </div>
+
+    <!-- USERS TEST (quase rodapé) -->
+    <div class="card test-users">
+        <h3>Usuários para teste</h3>
+
+        <p><strong>Aluno:</strong> aluno@nous.com / 123456</p>
+        <p><strong>Educador:</strong> educador@nous.com / 123456</p>
+    </div>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Acesso negado</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<header class="main-header">
+    <h1>NOUS Web</h1>
+</header>
+
+<main>
+    <div class="card" style="max-width: 700px; margin: 40px auto;">
+        <h2>Acesso negado</h2>
+        <p>Você não tem permissão para acessar esta página.</p>
+
+        <div style="margin-top: 20px; display:flex; gap:12px; flex-wrap:wrap;">
+            <button type="button" class="btn btn-secondary" onclick="history.back()">
+                Voltar à tela anterior
+            </button>
+
+            <a class="btn" th:href="@{/aluno/dashboard}">Ir para dashboard</a>
+
+            <form th:action="@{/logout}" method="post" style="display:inline; margin:0;">
+                <button type="submit" class="btn">Sair</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
