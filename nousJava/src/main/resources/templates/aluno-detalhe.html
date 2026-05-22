@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do aluno</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>Detalhes do aluno</h1>
+    <nav>
+        <a th:href="@{/educador/dashboard}">Dashboard</a>
+        <a th:href="@{/educador/alunos}">Alunos</a>
+        <form th:action="@{/logout}" method="post" style="display:inline; margin:0;">
+            <button type="submit">Sair</button>
+        </form>
+    </nav>
+</header>
+<main>
+    <div class="card">
+        <h2 th:text="${aluno.nmUsuario}"></h2>
+        <p><strong>E-mail:</strong> <span th:text="${aluno.dsEmail}"></span></p>
+        <div th:if="${temAlerta}" class="alert">Alerta ativo: o aluno apresentou pelo menos 3 check-ins com humor baixo.</div>
+    </div>
+    <div class="card">
+        <h3>Histórico de check-ins</h3>
+        <table>
+            <tr><th>Data</th><th>Humor</th><th>Comentário</th></tr>
+            <tr th:each="item : ${historico}">
+                <td th:text="${item.dtCheckin}"></td>
+                <td th:text="${item.nrHumor}"></td>
+                <td th:text="${item.dsComentario}"></td>
+            </tr>
+        </table>
+    </div>
+</main>
+</body>
+</html>

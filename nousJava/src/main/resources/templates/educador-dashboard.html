@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard do Educador</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>Dashboard do Educador</h1>
+    <nav>
+        <a th:href="@{/educador/dashboard}">Dashboard</a>
+        <a th:href="@{/educador/alunos}">Alunos</a>
+        <form th:action="@{/logout}" method="post" style="display:inline; margin:0;">
+            <button type="submit">Sair</button>
+        </form>
+    </nav>
+</header>
+<main>
+    <div class="grid">
+        <div class="card"><h3>Total de alunos</h3><p th:text="${totalAlunos}"></p></div>
+        <div class="card"><h3>Alunos com alerta</h3><p th:text="${totalAlertas}"></p></div>
+    </div>
+    <div class="card">
+        <h3>Alunos cadastrados</h3>
+        <table>
+            <tr><th>Nome</th><th>E-mail</th><th>Ação</th></tr>
+            <tr th:each="aluno : ${alunos}">
+                <td th:text="${aluno.nmUsuario}"></td>
+                <td th:text="${aluno.dsEmail}"></td>
+                <td><a class="btn btn-secondary" th:href="@{'/educador/alunos/' + ${aluno.idUsuario}}">Ver detalhes</a></td>
+            </tr>
+        </table>
+    </div>
+</main>
+</body>
+</html>

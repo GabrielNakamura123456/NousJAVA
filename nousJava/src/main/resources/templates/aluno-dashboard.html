@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard do Aluno</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<main>
+    <div class="card">
+        <h2 th:text="'Olá, ' + ${usuario.nmUsuario}"></h2>
+        <p>Bem-vindo ao NOUS Web.</p>
+        <div th:if="${temAlerta}" class="alert">
+            Atenção: seus últimos check-ins indicam necessidade de acompanhamento.
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Últimos check-ins</h3>
+        <table>
+            <tr>
+                <th>Data</th>
+                <th>Humor</th>
+                <th>Comentário</th>
+            </tr>
+            <tr th:each="item : ${historico}">
+                <td th:text="${item.dtCheckin}"></td>
+                <td th:text="${item.nrHumor}"></td>
+                <td th:text="${item.dsComentario}"></td>
+            </tr>
+        </table>
+    </div>
+</main>
+
+</body>
+</html>

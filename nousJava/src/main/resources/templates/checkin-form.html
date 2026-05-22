@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Novo check-in</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<main>
+    <div class="card">
+        <h2>Novo check-in emocional</h2>
+
+        <form th:action="@{/aluno/checkin}" th:object="${checkinForm}" method="post">
+
+            <label>Humor de 1 a 5</label>
+            <select th:field="*{nrHumor}">
+                <option value="">Selecione</option>
+                <option value="1">1 - Muito ruim</option>
+                <option value="2">2 - Ruim</option>
+                <option value="3">3 - Neutro</option>
+                <option value="4">4 - Bom</option>
+                <option value="5">5 - Muito bom</option>
+            </select>
+            <div class="error" th:if="${#fields.hasErrors('nrHumor')}" th:errors="*{nrHumor}"></div>
+
+            <label>Comentário</label>
+            <textarea th:field="*{dsComentario}" rows="4" placeholder="Conte como foi seu dia..."></textarea>
+            <div class="error" th:if="${#fields.hasErrors('dsComentario')}" th:errors="*{dsComentario}"></div>
+
+            <button class="btn" type="submit">Salvar check-in</button>
+        </form>
+    </div>
+</main>
+
+</body>
+</html>

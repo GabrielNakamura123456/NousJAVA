@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="navbar">
+    <header class="main-header">
+        <h1>NOUS</h1>
+
+        <nav class="main-nav">
+            <a th:href="@{/aluno/dashboard}">Dashboard</a>
+            <a th:href="@{/aluno/checkin}">Novo check-in</a>
+            <a th:href="@{/aluno/historico}">Histórico</a>
+            <a th:href="@{/aluno/trilhas}">Trilhas</a>
+
+            <button type="button" class="btn btn-secondary btn-small" onclick="history.back()">
+                Voltar
+            </button>
+
+            <form th:action="@{/logout}" method="post" style="display:inline; margin:0;">
+                <button type="submit" class="btn btn-small">Sair</button>
+            </form>
+        </nav>
+    </header>
+</div>
+
+</body>
+</html>

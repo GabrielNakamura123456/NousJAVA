@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Trilhas</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<main>
+
+    <div class="card">
+        <h2>Trilhas do NOUS</h2>
+    </div>
+
+    <div class="grid">
+        <div class="card" th:each="trilha : ${trilhas}">
+            <h3 th:text="${trilha.dsTitulo}"></h3>
+            <p th:text="${trilha.dsDescricao}"></p>
+            <p>
+                <strong>Categoria:</strong>
+                <span th:text="${trilha.dsCategoria}"></span>
+            </p>
+        </div>
+
+        <div th:if="${#lists.isEmpty(trilhas)}" class="card">
+            <p>Nenhuma trilha disponível no momento.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Seu progresso</h3>
+
+        <table>
+            <tr>
+                <th>Status</th>
+                <th>Início</th>
+                <th>Conclusão</th>
+            </tr>
+
+            <tr th:each="progresso : ${progressos}">
+                <td th:text="${progresso.stTrilha}"></td>
+                <td th:text="${progresso.dtInicio}"></td>
+                <td th:text="${progresso.dtConclusao}"></td>
+            </tr>
+
+            <tr th:if="${#lists.isEmpty(progressos)}">
+                <td colspan="3">Nenhum progresso encontrado.</td>
+            </tr>
+        </table>
+    </div>
+
+</main>
+
+</body>
+</html>
