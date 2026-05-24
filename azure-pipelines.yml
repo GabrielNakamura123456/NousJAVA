@@ -2,10 +2,9 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 steps:
-
 - task: JavaToolInstaller@0
   inputs:
     versionSpec: '21'
@@ -25,3 +24,11 @@ steps:
 - script: |
     echo Build concluído com sucesso!
   displayName: 'Mensagem de sucesso'
+
+- task: AzureWebApp@1
+  displayName: 'Deploy no Azure App Service'
+  inputs:
+    azureSubscription: 'azure-nous-connection'
+    appType: 'webAppLinux'
+    appName: 'nous-java-rm560671'
+    package: 'nousJava/target/*.jar'
