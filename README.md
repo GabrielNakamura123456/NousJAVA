@@ -1,6 +1,6 @@
 # NOUS Web - DevOps Tools & Cloud Computing
 
-## 📌 Descrição do Projeto
+##  Descrição do Projeto
 
 O NOUS Web é uma aplicação acadêmica desenvolvida para acompanhamento emocional e educacional de alunos, permitindo que estudantes realizem check-ins emocionais e que educadores acompanhem indicadores, histórico emocional e trilhas de desenvolvimento.
 
@@ -8,7 +8,7 @@ O projeto foi desenvolvido utilizando práticas de DevOps e Cloud Computing, inc
 
 ---
 
-# 👨‍💻 Integrantes
+#  Integrantes
 
 | Nome | RM |
 |------|------|
@@ -18,7 +18,7 @@ O projeto foi desenvolvido utilizando práticas de DevOps e Cloud Computing, inc
 
 ---
 
-# 🚀 Tecnologias Utilizadas
+#  Tecnologias Utilizadas
 
 - Java 21
 - Spring Boot
@@ -71,13 +71,13 @@ Oracle Database
 
 ---
 
-# 🖼️ Diagrama da Pipeline
+#  Diagrama da Pipeline
 
 ![Pipeline CI/CD](./diagramasprintdevops.drawio.png)
 
 ---
 
-# 🔄 Pipeline CI/CD
+#  Pipeline CI/CD
 
 A pipeline foi configurada no Azure DevOps utilizando YAML.
 
@@ -97,7 +97,7 @@ azure-pipelines.yml
 
 ---
 
-# 🌐 Aplicação Online
+#  Aplicação Online
 
 A aplicação foi publicada no Azure App Service:
 
@@ -107,7 +107,7 @@ https://nous-java-rm560671-dne5g8gpamg7fkda.centralus-01.azurewebsites.net/
 
 ---
 
-# 🗄️ Banco de Dados
+#  Banco de Dados
 
 O projeto utiliza Oracle Database em nuvem para persistência dos dados.
 
@@ -115,16 +115,16 @@ Foi demonstrada persistência real dos dados através da criação de check-ins 
 
 ---
 
-# 🔐 Usuários para Teste
+#  Usuários para Teste
 
-## 👨‍🎓 Aluno
+##  Aluno
 
 ```text
 E-mail: aluno@nous.com
 Senha: 123456
 ```
 
-## 👨‍🏫 Educador
+##  Educador
 
 ```text
 E-mail: educador@nous.com
@@ -133,7 +133,7 @@ Senha: 123456
 
 ---
 
-# ▶️ Como Executar Localmente
+#  Como Executar Localmente
 
 ## 1. Clonar repositório
 
@@ -185,7 +185,7 @@ mvnw.cmd spring-boot:run
 
 ---
 
-# 📂 Estrutura do Projeto
+#  Estrutura do Projeto
 
 ```text
 src/
