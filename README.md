@@ -35,7 +35,7 @@ O projeto foi desenvolvido utilizando práticas de DevOps e Cloud Computing, inc
 
 ---
 
-# ☁️ Arquitetura DevOps / CI-CD
+#  Arquitetura DevOps / CI-CD
 
 A aplicação utiliza uma pipeline CI/CD automatizada com Azure DevOps.
 
@@ -200,7 +200,7 @@ src/
 
 ---
 
-# 📋 Azure DevOps
+#  Azure DevOps
 
 Durante o desenvolvimento foram utilizados:
 
